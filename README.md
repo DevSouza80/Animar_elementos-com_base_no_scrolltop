@@ -26,8 +26,6 @@ jQuery
  └── js/
       └── functions.js
 
-    📄 HTML (Estrutura)
-
 O HTML possui:
 
 Um menu de navegação
