@@ -102,9 +102,13 @@ $(function(){
       if(elOffY + 30 < (windowOffY + windowHeight) &&
          elOffY + 30 + $(this).height() > windowOffY){
 
-        $('a').css('border-bottom', '0');
+        // Remove destaque de todos
+        $('nav a').css('border-bottom', '0');
 
+        // Pega o target da seção
         var target = $(this).attr('target');
+
+        // Aplica destaque no menu correspondente
         $('.' + target).css('border-bottom', '2px solid #333');
 
         return;
@@ -115,7 +119,6 @@ $(function(){
   });
 
 });
-
 🎯 Resultado
 
 ✔️ Ao rolar a página:
