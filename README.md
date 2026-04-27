@@ -9,14 +9,15 @@ O objetivo deste estudo é entender como:
 Capturar a posição do scroll da janela
 Identificar qual seção está visível
 Alterar estilos dinamicamente
-
 Criar uma navegação interativa baseada no scroll
-🛠️ Tecnologias utilizadas:
 
+🛠️ Tecnologias utilizadas
 HTML5
 CSS3
 JavaScript
 jQuery
+
+
 📂 Estrutura do Projeto
 📁 projeto
  ├── index.html
@@ -24,12 +25,14 @@ jQuery
  │    └── style.css
  └── js/
       └── functions.js
-📄 HTML (Estrutura)
+
+    📄 HTML (Estrutura)
 
 O HTML possui:
 
 Um menu de navegação
 Seções com atributo customizado target
+
 <nav>
   <ul>
     <li><a class="home">Home</a></li>
@@ -54,6 +57,7 @@ Seções com atributo customizado target
   </div>
 
 </div>
+
 🎨 CSS (Estilização)
 
 Principais pontos:
@@ -61,6 +65,7 @@ Principais pontos:
 Menu fixo no topo
 Layout simples
 Destaque visual via border-bottom
+
 nav {
   position: fixed;
   text-align: center;
@@ -84,6 +89,7 @@ nav ul li {
   min-height: 100%;
   padding: 30px 2%;
 }
+
 ⚙️ JavaScript (Lógica do Scroll)
 
 Aqui está o coração do projeto:
@@ -102,13 +108,9 @@ $(function(){
       if(elOffY + 30 < (windowOffY + windowHeight) &&
          elOffY + 30 + $(this).height() > windowOffY){
 
-        // Remove destaque de todos
-        $('nav a').css('border-bottom', '0');
+        $('a').css('border-bottom', '0');
 
-        // Pega o target da seção
         var target = $(this).attr('target');
-
-        // Aplica destaque no menu correspondente
         $('.' + target).css('border-bottom', '2px solid #333');
 
         return;
@@ -119,6 +121,8 @@ $(function(){
   });
 
 });
+
+
 🎯 Resultado
 
 ✔️ Ao rolar a página:
@@ -127,18 +131,26 @@ A seção visível é detectada automaticamente
 O menu é atualizado em tempo real
 O usuário sabe exatamente onde está
 
+
 💡 Possíveis melhorias
+
 Adicionar scroll suave (smooth scroll)
 Usar Intersection Observer (mais moderno)
 Adicionar animações com fade ou transform
 Melhorar responsividade
 
+
 📚 Aprendizados
+
 Manipulação de scroll com jQuery
 Trabalhar com offset() e height()
 Criar interações dinâmicas com o usuário
 Organização de código front-end
 
+
 👨‍💻 Autor
 
 Desenvolvido para fins de estudo 🚀
+
+
+
