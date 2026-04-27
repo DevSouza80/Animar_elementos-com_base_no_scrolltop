@@ -9,8 +9,10 @@ O objetivo deste estudo é entender como:
 Capturar a posição do scroll da janela
 Identificar qual seção está visível
 Alterar estilos dinamicamente
+
 Criar uma navegação interativa baseada no scroll
-🛠️ Tecnologias utilizadas
+🛠️ Tecnologias utilizadas:
+
 HTML5
 CSS3
 JavaScript
@@ -22,14 +24,12 @@ jQuery
  │    └── style.css
  └── js/
       └── functions.js
-
-     📄 HTML (Estrutura)
+📄 HTML (Estrutura)
 
 O HTML possui:
 
 Um menu de navegação
 Seções com atributo customizado target
-
 <nav>
   <ul>
     <li><a class="home">Home</a></li>
@@ -54,7 +54,6 @@ Seções com atributo customizado target
   </div>
 
 </div>
-
 🎨 CSS (Estilização)
 
 Principais pontos:
@@ -62,7 +61,6 @@ Principais pontos:
 Menu fixo no topo
 Layout simples
 Destaque visual via border-bottom
-
 nav {
   position: fixed;
   text-align: center;
@@ -86,10 +84,10 @@ nav ul li {
   min-height: 100%;
   padding: 30px 2%;
 }
-
 ⚙️ JavaScript (Lógica do Scroll)
 
 Aqui está o coração do projeto:
+
 $(function(){
 
   $(window).scroll(function(){
@@ -118,40 +116,6 @@ $(function(){
 
 });
 
-🧠 Explicação da Lógica
-
-🔹 1. Capturando o scroll
-var windowOffY = $(window).scrollTop();
-
-Retorna a posição vertical atual da tela
-
-🔹 2. Altura da tela
-var windowHeight = $(window).height();
-
-Usado para calcular se o elemento está visível
-
-3. Percorrendo as seções
-
-   $('.sessao').each(function(){
-
-   Loop em cada seção da página
-
-   🔹 4. Verificando se está visível
-
-   if(elOffY + 30 < (windowOffY + windowHeight) &&
-   elOffY + 30 + $(this).height() > windowOffY)
-
-   Essa condição verifica se a seção está dentro da área visível da tela.
-
-   
-🔹 5. Destacando o menu
-
-$('a').css('border-bottom', '0');
-$('.' + target).css('border-bottom', '2px solid #333');
-
-Remove destaque de todos os links
-Aplica destaque apenas no link correspondente
-
 🎯 Resultado
 
 ✔️ Ao rolar a página:
@@ -173,4 +137,5 @@ Criar interações dinâmicas com o usuário
 Organização de código front-end
 
 👨‍💻 Autor
+
 Desenvolvido para fins de estudo 🚀
